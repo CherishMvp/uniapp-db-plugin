@@ -1,6 +1,6 @@
 # uniapp-db-plugin
 
-> Manipulating sqlite databases in uniapp app developmentThe hook plugin 📦
+> uniapp app开发中的操作sqlite数据库的hook插件 📦
 Language: English | [中文](README-ZH.md)
 ## Install
 
@@ -24,14 +24,14 @@ import { useSqlite } from '/src/hooks/useSqlite'
 		'test_table_id',
 	)
 
-	// add
+	// 新增数据
 	const inserData = () => {
 		insert({
 			data: '',,
 			userName: 'cs1',
 		})
 	}
-	// update
+	// 更新
 	const updateData = () => { 
     const upinfo = "userName='xxx' and test_table_id=2"
 		try {
@@ -42,20 +42,20 @@ import { useSqlite } from '/src/hooks/useSqlite'
 			console.log('error', error)
 		}
 	}
-	// del
+	// 删除
 	const deleteData = () => {
 		sqldelete({ test_table_id: 3 })
 	}
-	// select
+	// 条件查询
 	const selectData = () => {
 		select("userName='cs1' and test_table_id>3").then((res) => {
-			console.log('rs', res)
+			console.log('条件查询结果', res)
 		})
 	}
 
 ```
 
-Object key-value pair queries can also be used (internally encapsulated)
+也可以使用对象键值对查询（内部已封装）
 
 ```js
 	const selectData2 = () => {
@@ -65,7 +65,7 @@ Object key-value pair queries can also be used (internally encapsulated)
 		}
 
 		select(conditions).then((res) => {
-			console.log('rs', res)
+			console.log('条件查询结果', res)
 		})
 	}
   const updateData = () => {
@@ -85,23 +85,23 @@ Object key-value pair queries can also be used (internally encapsulated)
 
 ## API 🚀
 
-### Just look at the type file
+### 查看type类型文件即可
 
 ## Why Use This? 🤔
 
-- **Convenience**: Use the encapsulated hooks to speed up development efficiency.
-- **Singleton Pattern**: Easy to manage.
-- **Ease of Use**: Simple and clear API usage.
-- **Full TypeScript Support**: Complete TypeScript type support.
+- **方便**： 使用封装钩子加快开发效率。
+- **继承模式**： 易于管理。
+- **易于使用**： 简单明了的 API 使用。
+- **TypeScript**： 完全支持 TypeScript 类型。
 
-## Contributing 💪
+## 如何贡献 💪
 
-Contributions are welcome! If you'd like to improve this utility, feel free to open issues or submit pull requests.
+欢迎贡献！如果您想改进本工具，请随时打开问题或提交拉取请求。
 
 ### How to contribute:
-1. Fork the repository
-2. Create a new branch for your feature/bugfix
-3. Submit a pull request with your changes
+1. 分叉仓库
+2. 为您的功能/错误修正创建一个新分支
+3. 提交包含更改的拉取请求
 
 ## License 📜
 
@@ -111,4 +111,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 👨‍💻 Developed by [cherishtao](https://github.com/CherishMvp)
 
-Thanks for using **uniapp-db-plugin**! 😎
+感谢使用 **uniapp-db-plugin**! 😎
