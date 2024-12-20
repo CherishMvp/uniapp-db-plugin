@@ -1,0 +1,39 @@
+{
+  "name": "uniapp-db-plugin",
+  "version": "1.2.0",
+  "description": "uniapp sqlite db plugin",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "vite-build": "vite build && tsc --declaration --emitDeclarationOnly --outDir dist/types",
+    "size-preview": "npm pack ."
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "cherish",
+  "license": "Apache-2.0",
+  "keywords": [
+    "uni-app",
+    "plus",
+    "sqlite",
+    "db",
+    "dbhelper"
+  ],
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.14",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.10.1",
+    "lodash-es": "^4.17.21",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1"
+  }
+}
