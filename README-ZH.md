@@ -1,7 +1,7 @@
 # uniapp-db-plugin
 
 > uniapp app开发中的操作sqlite数据库的hook插件 📦
-Language: English | [中文](README-ZH.md)
+> Language: English | [中文](README-ZH.md)
 ## Install
 
 ```sh

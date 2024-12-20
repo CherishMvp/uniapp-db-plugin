@@ -1,7 +1,7 @@
 # uniapp-db-plugin
 
 > Manipulating sqlite databases in uniapp app developmentThe hook plugin 📦
-Language: English | [中文](README-ZH.md)
+> Language: 中文 | [English](README.md)
 ## Install
 
 ```sh
