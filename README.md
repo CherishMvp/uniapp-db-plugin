@@ -1,29 +1,35 @@
 # uniapp-db-plugin
 
 > Manipulating sqlite databases in uniapp app developmentThe hook plugin 📦
-> Language: 中文 | [English](README.md)
+
+> Language: English | [中文](README-ZH.md)
 ## Install
 
 ```sh
 pnpm add uniapp-db-plugin
 ```
 
+## Tip ✨
+> Initialization tip: Note that if you use ``useSqlite`` to create an initialized table, the default is an auto-incrementing ID primary key.
+> If you need to set other structures in the table as indexes and use the **update or modify method** at the same time: ``INSERT OR REPLACE INTO students (id, name, score) VALUES (1, 'John', 90);``, then you should use ``CREATE UNIQUE INDEX "main"."key" ON "xx" ( "key" );`` to set the unique index
+
 ## Usage ✨
 
+### init 🧐
 ```typescript
-import { useSqlite } from '/src/hooks/useSqlite'
-
+import { useSqlite } from 'uniapp-db-plugin'
+// This is a hook that includes a sqlite instance and common encapsulated methods
 	const { insertBatch, select, sqldelete, sqlite, selectPage, insert, update } = useSqlite(
-		'test_table',
+		'test_table',//table name
+		//表结构
 		{
 			data: 'TXEXT',
 			userName: 'TEXT',
-			createdAt: "not null default(datetime(CURRENT_TIMESTAMP,'localtime'))",
-			updatedAt: "not null default(datetime(CURRENT_TIMESTAMP,'localtime'))",
+			createdAt: "not null default(datetime(CURRENT_TIMESTAMP,'localtime'))",//required
+			updatedAt: "not null default(datetime(CURRENT_TIMESTAMP,'localtime'))",//required
 		},
-		'test_table_id',
+		'test_table_id',//primary key auto increment
 	)
-
 	// add
 	const inserData = () => {
 		insert({

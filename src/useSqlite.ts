@@ -4,7 +4,7 @@ import { sqlite } from './dbhelper'
  * @param {Record<string, string>} schema 表结构信息等
  * @param key 主键
  */
-export const useSqlite = (table: string, schema?: Record<string, string>, key?: string) => {
+export const useSqlite = (table: string, schema?: Record<string, string>, key?: string,primaryKeyType?:string) => {
 	const init = async () => {
 		// sqlite.dropTable(table);
 		console.log('sqlite.isOpen()', sqlite.isOpen())

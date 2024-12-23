@@ -189,7 +189,10 @@ export class Sqlite {
 		const columns = Object.entries(schema)
 			.map(([key, value]) => `${key} ${value}`)
 			.join(',')
+		// let sql: any=;
 		const sql = `CREATE TABLE IF NOT EXISTS ${tableName} (${key ? `"${key}" INTEGER PRIMARY KEY AUTOINCREMENT, ` : ''}${columns})`
+
+
 		await this.executeSql(sql)
 		return await this.createTrigger(tableName)
 	}
